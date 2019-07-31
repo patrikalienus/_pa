@@ -1,0 +1,12 @@
+# ignore all files starting with . or ~
+.*
+~*
+
+/*
+/wp-content/*
+/wp-content/themes/*
+!/wp-content/
+!/wp-content/themes/
+!/wp-content/themes/_pa/
+!/readme.md
+!.gitignore
