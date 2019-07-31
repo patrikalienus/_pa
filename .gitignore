@@ -10,3 +10,11 @@
 !/wp-content/themes/_pa/
 !/readme.md
 !.gitignore
+!.babelrc.js
+!.browserslistrc
+!.editorconfig
+!.eslintrc.json
+!.eslintignore
+!.stylelintignore
+!.stylelintrc
+!.travis.yml
