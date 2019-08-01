@@ -8520,7 +8520,7 @@
 		"ft": 64,
 		"ma": 0,
 		"mi": 1,
-		"oA": 1,
+		"oA": 0,
 		"oAP": "/_build/_components/Cleave.js-master/dist/cleave-min.js",
 		"oF": 0,
 		"sC": 3,
@@ -25337,9 +25337,9 @@
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
-		"oA": 0,
+		"oA": 1,
 		"oAP": "/_build/screenshot.psd",
-		"oF": 0
+		"oF": 1
 		},
 	"/search.php": {
 		"cB": 0,

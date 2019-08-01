@@ -68,24 +68,24 @@ if ( post_password_required() ) { return; } ?>
 				$fields =  array(
 					'author' =>
 						'<div class="left">
-						<div class="author comment-form-author"><label class="screen-reader-only" for="author">' . __( 'Name', 'domainreference' ) .
+						<div class="comment-form-input-wrapper author comment-form-author"><label class="screen-reader-only" for="author">' . __( 'Name', 'domainreference' ) .
 						( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
-						'<input id="author" name="author" type="text" required="required" placeholder="Name" value="' . esc_attr( $commenter['comment_author'] ) .
+						'<input id="author" name="author" type="text" required placeholder="Name" value="' . esc_attr( $commenter['comment_author'] ) .
 						'" size="30"' . $aria_req . ' /></div>',
 					
 					'email' =>
-						'<div class="email comment-form-email"><label class="screen-reader-only" for="email">' . __( 'Email', 'domainreference' ) .
+						'<div class="comment-form-input-wrapper email comment-form-email"><label class="screen-reader-only" for="email">' . __( 'Email', 'domainreference' ) .
 						( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
-						'<input id="email" name="email" type="text" required="required" placeholder="Email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+						'<input id="email" name="email" type="text" required placeholder="Email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
 						'" size="30"' . $aria_req . ' /></div>',
 					
 					'url' =>
-						'<div class="url comment-form-url"><label class="screen-reader-only" for="url">' . __( 'Website', 'domainreference' ) . '</label>' .
+						'<div class="comment-form-input-wrapper url comment-form-url"><label class="screen-reader-only" for="url">' . __( 'Website', 'domainreference' ) . '</label>' .
 						'<input id="url" name="url" type="text" placeholder="Website URL" value="' . esc_attr( $commenter['comment_author_url'] ) .
 						'" size="30" /></div>',
 					
 					'cookies' =>
-						'<div class="cookies comment-form-cookies-consent"><span><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /></span>' . '<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.' ) . '</label></div>
+						'<div class="comment-form-input-wrapper cookies comment-form-cookies-consent"><span><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /></span>' . '<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.' ) . '</label></div>
 						</div><!-- .left ENDs here -->',
 				);
 
@@ -104,9 +104,9 @@ if ( post_password_required() ) { return; } ?>
 
 					'comment_field'			=>
 						'<div class="right">
-						<div class="comment_field">
+						<div class="comment-form-input-wrapper comment_field">
 							<label class="screen-reader-only" for="comment">' . _x( 'Comment', 'noun' ) . '</label>
-							<textarea required="required" id="comment" placeholder="Comment goes here, in this slightly larger box." name="comment" cols="45" rows="8" aria-required="true"></textarea>
+							<textarea required id="comment" placeholder="Comment goes here, in this slightly larger box." name="comment" cols="45" rows="8" aria-required="true"></textarea>
 						</div>',
 
 					'must_log_in'			=>

@@ -22,11 +22,17 @@
 
 // @codekit-append quiet "../_components/popper.min.js";
 // @codekit-append quiet "../_components/bootstrap-4.3.1/dist/js/bootstrap.min.js";
-// DISABLED codekit-append quiet "../_components/lazyload.js";
-// @codekit-append quiet "../_components/Cleave.js-master/dist/cleave.js";
-// @codekit-append quiet "../_components/jquery.shave.js";
-// @codekit-append quiet "../_components/fancybox/jquery.fancybox.js";
-// @codekit-append quiet "../_components/scrollreveal.js";
-// @codekit-append quiet "../_components/superembed.js";
 // @codekit-append quiet "../_components/tooltip.min.js";
 // @codekit-append quiet "../js/navgoco.js";
+
+
+/**
+ * Currently disabled as not yet implemented.
+ */
+
+// codekit-append quiet "../_components/lazyload.js";
+// codekit-append quiet "../_components/Cleave.js-master/dist/cleave.js";
+// codekit-append quiet "../_components/jquery.shave.js";
+// codekit-append quiet "../_components/fancybox/jquery.fancybox.js";
+// codekit-append quiet "../_components/scrollreveal.js";
+// codekit-append quiet "../_components/superembed.js";
