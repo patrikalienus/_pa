@@ -13,6 +13,7 @@ It's based off of [_s](https://underscores.me/) in order to save a day of work.
 - I have not cared in the slightest about checking compatibility with older WordPress versions or PHP below 7.3. Feel free to test if you want, but I won't make changes to accomodate lower versions - because why?
 - There are code comments scattered around, but it's far from complete.
 - I do not like (nay - I HATE) the 'endif', 'endwhile' format. It breaks my visual way of thinking and so all instances of that have been removed. A PR that contains such things, will be denied.
+- PHP 7.1+ is required for sure. PHP 7.3 is (probably) required. I haven't bothered testing in lower versions because really, why would I? I keep my environments up-to-date.
 
 ### Customization
 
