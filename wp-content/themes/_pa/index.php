@@ -30,7 +30,7 @@ get_header();
 							*/
 							get_template_part( 'template-parts/content', get_post_type() );
 						}
-						the_posts_navigation();
+						_pa_numeric_posts_nav();
 					} else {
 						get_template_part( 'template-parts/content', 'none' );
 					}

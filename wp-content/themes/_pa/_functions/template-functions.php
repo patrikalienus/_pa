@@ -37,22 +37,6 @@ function _pa_pingback_header() {
 add_action( 'wp_head', '_pa_pingback_header' );
 
 
-
-
-
-
-
-
-
-
-
-/**
- * Curtesy of http://justintadlock.com/archives/2012/08/21/post-formats-chat
- */
-
-add_filter( 'the_content', 'my_format_chat_content' );
-add_filter( 'my_post_format_chat_text', 'wpautop' );
-
 /**
  * This function filters the post content when viewing a post with the "chat" post format. It formats the
  * content with structured HTML markup to make it easy for theme developers to style chat posts.
@@ -69,6 +53,9 @@ add_filter( 'my_post_format_chat_text', 'wpautop' );
  * @param string $content The content of the post.
  * @return string $chat_output The formatted content of the post.
  */
+add_filter( 'the_content', 'my_format_chat_content' );
+add_filter( 'my_post_format_chat_text', 'wpautop' );
+
 function my_format_chat_content( $content ) {
 	global $_post_format_chat_ids;
 
@@ -76,23 +63,17 @@ function my_format_chat_content( $content ) {
 		return $content;
 	}
 	
-	/* Set the global variable of speaker IDs to a new, empty array for this chat. */
-	$_post_format_chat_ids = array();
+	$_post_format_chat_ids = array(); // Set the global variable of speaker IDs to a new, empty array for this chat.
+	$separator = apply_filters( 'my_post_format_chat_separator', ':' ); // Allow the separator (separator for speaker/text) to be filtered.
+	$chat_output = "\n\t\t\t" . '<div id="chat-transcript-' . esc_attr( get_the_ID() ) . '" class="chat-transcript">'; // Open the chat transcript div and give it a unique ID based on the post ID.
+	$chat_rows = preg_split( "/(\r?\n)+|(<br\s*\/?>\s*)+/", $content ); // Split the content to get individual chat rows.
 
-	/* Allow the separator (separator for speaker/text) to be filtered. */
-	$separator = apply_filters( 'my_post_format_chat_separator', ':' );
-
-	/* Open the chat transcript div and give it a unique ID based on the post ID. */
-	$chat_output = "\n\t\t\t" . '<div id="chat-transcript-' . esc_attr( get_the_ID() ) . '" class="chat-transcript">';
-
-	/* Split the content to get individual chat rows. */
-	$chat_rows = preg_split( "/(\r?\n)+|(<br\s*\/?>\s*)+/", $content );
-
-	/* Loop through each row and format the output. */
+	/**
+	 * Loop through each row and format the output.
+	 */
 	foreach ( $chat_rows as $chat_row ) {
 		/* If a speaker is found, create a new chat row with speaker and text. */
 		if ( strpos( $chat_row, $separator ) ) {
-
 			/* Split the chat row into author/text. */
 			$chat_row_split = explode( $separator, trim( $chat_row ), 2 );
 
@@ -123,7 +104,6 @@ function my_format_chat_content( $content ) {
 		 * previous speaker and label it as such, but let's still create a new row.
 		 */
 		else {
-
 			/* Make sure we have text. */
 			if ( !empty( $chat_row ) ) {
 
@@ -170,15 +150,85 @@ function my_format_chat_content( $content ) {
 function my_format_chat_row_id( $chat_author ) {
 	global $_post_format_chat_ids;
 
-	/* Let's sanitize the chat author to avoid craziness and differences like "John" and "john". */
-	$chat_author = strtolower( strip_tags( $chat_author ) );
-
-	/* Add the chat author to the array. */
-	$_post_format_chat_ids[] = $chat_author;
-
-	/* Make sure the array only holds unique values. */
-	$_post_format_chat_ids = array_unique( $_post_format_chat_ids );
-
-	/* Return the array key for the chat author and add "1" to avoid an ID of "0". */
-	return absint( array_search( $chat_author, $_post_format_chat_ids ) ) + 1;
+	$chat_author = strtolower( strip_tags( $chat_author ) ); /* Sanitize the chat author to avoid  "Join" vs "john". */
+	$_post_format_chat_ids[] = $chat_author; /* Add the chat author to the array. */
+	$_post_format_chat_ids = array_unique( $_post_format_chat_ids ); /* Make sure the array only holds unique values. */
+	return absint( array_search( $chat_author, $_post_format_chat_ids ) ) + 1; /* Return array key for the author and add "1" to avoid ID "0". */
 }
+
+/**
+ * Numeric Posts Navigation
+ * Courtesy of: https://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
+ * 
+ * @var wp_query
+ * @var paged
+ * @var max
+ * @var links
+ * @var class
+ */
+function _pa_numeric_posts_nav() {
+	global $wp_query;
+	if ( is_singular() || $wp_query->max_num_pages <= 1 ) {
+		return;
+	}
+
+	$paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+	$max   = intval( $wp_query->max_num_pages );
+
+	/** Add current page to the array */
+	if ( $paged >= 1 )
+		$links[] = $paged;
+
+	/** Add the pages around the current page to the array */
+	if ( $paged >= 3 ) {
+		$links[] = $paged - 1;
+		$links[] = $paged - 2;
+	}
+
+	if ( ( $paged + 2 ) <= $max ) {
+		$links[] = $paged + 2;
+		$links[] = $paged + 1;
+	}
+
+	// Start the list.
+	echo '<div class="pagination-nav"><ul>' . "\n";
+
+	/** Previous Post Link */
+	if ( get_previous_posts_link() ) {
+		printf( '<li>%s</li>' . "\n", get_previous_posts_link( __( '« ' ) ) );
+	}
+
+	/** Link to first page, plus ellipses if necessary */
+	if ( ! in_array( 1, $links ) ) {
+		$class = 1 == $paged ? ' class="active"' : '';
+		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+		if ( ! in_array( 2, $links ) ) {
+			echo '<li>…</li>';
+		}
+	}
+
+	/** Link to current page, plus 2 pages in either direction if necessary */
+	sort( $links );
+	foreach ( (array) $links as $link ) {
+		$class = $paged == $link ? ' class="active"' : '';
+		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+	}
+
+	/** Link to last page, plus ellipses if necessary */
+	if ( ! in_array( $max, $links ) ) {
+		if ( ! in_array( $max - 1, $links ) ) {
+			echo '<li>…</li>' . "\n";
+		}
+		$class = $paged == $max ? ' class="active"' : '';
+		printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+	}
+
+	/** Next Post Link */
+	if ( get_next_posts_link() ) {
+		printf( '<li>%s</li>' . "\n", get_next_posts_link( __( ' »' ) ) );
+	}
+
+	// Finalize the list.
+	echo '</ul></div>' . "\n";
+}
+
