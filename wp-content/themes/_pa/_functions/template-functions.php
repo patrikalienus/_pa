@@ -232,3 +232,93 @@ function _pa_numeric_posts_nav() {
 	echo '</ul></div>' . "\n";
 }
 
+
+
+
+/**
+ * Custom gallery format
+ */
+function _pa_custom_gallery_format( $string, $attr ) {
+	/**
+	 * @var output		returned at the end
+	 * @var posts		array of images that we're passing to this gallery.
+	 */
+	$output = '<div class="wp-gallery-container">';
+	$images = get_posts( 
+		array( 
+			'include' => $attr['ids'],
+			'post_type' => 'attachment'
+		)
+	);
+
+	foreach ( $images as $i ) {
+		$small = wp_get_attachment_image_src($i->ID, '_pa-small')[0];
+		$large = wp_get_attachment_image_src($i->ID, '_pa-large')[0];
+		$caption = wp_get_attachment_caption( $i->ID );
+		$copyright = wp_get_attachment_metadata( $i->ID)['image_meta']['copyright']; // EXIF
+		$title = get_the_title($i->ID);
+		
+		// Declare new variables.
+		$caption_output = '';
+		$alt_output = '';
+
+		/**
+		 * I know. What follows is a bit... chaotic. But I wanna make sure that
+		 * we're not outputting utter garbage, like empty alt tags or span's without
+		 * any data in them. So yea, lots of if's, else's and so on. If you have a
+		 * better way of achieving the same thing, hack away.
+		 */
+
+		/**
+		 * Define caption area.
+		 */
+		if ( isset($caption) ) {
+			$caption_output = $caption;
+		} elseif ( isset($title) ) {
+			$caption_output = $title;
+		} else {
+			$caption_output = ' ';
+		}
+
+		// If $caption contains anything, wrap it
+		if ( !empty($caption)) {
+			$caption_output = sprintf('<span class="caption"> %1$s </span>', $caption);
+		}
+
+		/**
+		 * Define Copyright information.
+		 */
+		if ( !empty( $copyright ) ) {
+			$alt_output = $copyright;
+			if ( !empty($title) ) {
+				$alt_output .= ' , ' . $title;
+			}
+		} elseif ( !empty( $title ) ) {
+			$alt_output = $title;
+		} else {
+			$alt_output = 'No alt text set. This is bad practice, and thus you\'re being punished by having this stupid text here.';
+		}
+
+		// If $alt contains anything, wrap it:
+		if ( !empty($alt_output) ) {
+			$alt_output = ' alt=" ' . $alt_output . ' " ';
+		}
+		
+		
+		$output .= '<figure class="image">';
+			$output .= '<div class="image-container">';
+				/**
+				 * %1 Large image URI
+				 * %2 Small image URI
+				 * %3 Final ALT output
+				 * %4 Final caption output
+				 */
+				$output .= sprintf('<a href=" %1$s "><img src=" %2$s " class="" %3$s> %4$s </a>', $large, $small, $alt_output, $caption_output);
+			$output .= '</div>';
+		$output .= '</figure>';
+	}
+	
+	$output .= "</div>";
+	return $output;
+}
+add_filter('post_gallery', '_pa_custom_gallery_format', 10, 2);

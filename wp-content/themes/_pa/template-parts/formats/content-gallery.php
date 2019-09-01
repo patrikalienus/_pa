@@ -12,7 +12,7 @@ if ( is_singular() ) {
 }
 
 _pa_container_tag_post(); ?>
-	<div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 offset-md-1 offset-lg-2 offset-xl-2">
+	<div class="col-xs-12 col-xsm-12 col-sm-12 col-md-10 col-lg-10 col-xl-12 offset-md-1 offset-lg-1 offset-xl-0">
 		<div class="entry-content"><?php
 			the_content( sprintf(
 				wp_kses(
