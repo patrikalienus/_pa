@@ -167,11 +167,13 @@ if ( ! function_exists( '_pa_post_footer' ) ) {
 				$tags_output = '<span class="tags-links">' . strtolower($tags_list) . '</span>';
 			}
 			// If both tags and categories have content, add a separator in between them.
-			if ( $tags_output && $cats_output ) {
+			if ( isset($tags_output) && isset($cats_output) ) {
 				$separator = ', ';
 			} else {
 				$separator = '';
 			}
+			if ( !isset($tags_output) ) { $tags_output = ' '; }
+			if ( !isset($cats_output) ) { $cats_output = ' '; }
 			$tagged_output = '<div class="tagged">' . $cats_output . $separator . $tags_output . '</div>';
 		}
 

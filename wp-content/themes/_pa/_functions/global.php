@@ -1206,7 +1206,7 @@ class _pa_WalkerForComments extends Walker_Comment {
  */
 
 function move_fields_a_little( $fields ) {
-	$comment_notes = $fields['comment-notes'];
+	//$comment_notes = $fields['comment-notes'];
 		unset( $fields['comment-notes'] );
 	$author = $fields['author'];
 		unset( $fields['author'] );
@@ -1218,7 +1218,7 @@ function move_fields_a_little( $fields ) {
 		unset( $fields['cookies'] );
 	$comment_field = $fields['comment'];
 		unset( $fields['comment'] );
-	$form_allowed_tags = $fields['form-allowed-tags'];
+	//$form_allowed_tags = $fields['form-allowed-tags'];
 		unset( $fields['form-allowed-tags'] );
 
 	$fields['author'] = $author;

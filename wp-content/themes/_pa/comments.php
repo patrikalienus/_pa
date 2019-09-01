@@ -14,9 +14,7 @@ if ( post_password_required() ) { return; } ?>
 
 <div id="comments" class="comments-area">
 	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) {
-		?>
+	if ( have_comments() ) { ?>
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 offset-lg-2">
@@ -71,21 +69,26 @@ if ( post_password_required() ) { return; } ?>
 						<div class="comment-form-input-wrapper author comment-form-author"><label class="screen-reader-only" for="author">' . __( 'Name', 'domainreference' ) .
 						( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
 						'<input id="author" name="author" type="text" required placeholder="Name" value="' . esc_attr( $commenter['comment_author'] ) .
-						'" size="30"' . $aria_req . ' /></div>',
+						'" size="30"></div>',
 					
 					'email' =>
 						'<div class="comment-form-input-wrapper email comment-form-email"><label class="screen-reader-only" for="email">' . __( 'Email', 'domainreference' ) .
 						( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
 						'<input id="email" name="email" type="text" required placeholder="Email" value="' . esc_attr(  $commenter['comment_author_email'] ) .
-						'" size="30"' . $aria_req . ' /></div>',
+						'" size="30"></div>',
 					
 					'url' =>
 						'<div class="comment-form-input-wrapper url comment-form-url"><label class="screen-reader-only" for="url">' . __( 'Website', 'domainreference' ) . '</label>' .
 						'<input id="url" name="url" type="text" placeholder="Website URL" value="' . esc_attr( $commenter['comment_author_url'] ) .
-						'" size="30" /></div>',
+						'" size="30"></div>',
 					
 					'cookies' =>
-						'<div class="comment-form-input-wrapper cookies comment-form-cookies-consent"><span><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' /></span>' . '<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.' ) . '</label></div>
+						'<div class="comment-form-input-wrapper cookies comment-form-cookies-consent">
+							<span>
+								<input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes">
+							</span>
+							<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.' ) . '</label>
+						</div>
 						</div><!-- .left ENDs here -->',
 				);
 
@@ -124,7 +127,7 @@ if ( post_password_required() ) { return; } ?>
 						) . '</p>',
 
 					'comment_notes_before'	=>
-						'<div class="comment-notes">' . __( 'Your email address will not be published.<br>Required fields are marked.' ) . ( $req ? $required_text : '' ) . '</div>',
+						'<div class="comment-notes">' . __( 'Your email address will not be published.<br>Required fields are marked.' ) . '</div>',
 
 					'comment_notes_after'	=>
 						'<div class="form-allowed-tags">' . sprintf(
