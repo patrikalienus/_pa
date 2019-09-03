@@ -7,14 +7,6 @@ add_action( 'tgmpa_register', '_pa_register_required_plugins' );
 function _pa_register_required_plugins() {
 	$plugins = array(
 		array(
-			'name'               => 'Code Prettify', // The plugin name.
-			'slug'               => 'code-prettify', // The plugin slug (typically the folder name).
-			'required'           => false, // recommended
-			'version'            => '1.4.2', // Must be this or higher
-			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
-			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-		),
-		array(
 			'name'               => 'Regenerate Thumbnails', // The plugin name.
 			'slug'               => 'regenerate-thumbnails', // The plugin slug (typically the folder name).
 			'required'           => false, // recommended

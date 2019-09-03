@@ -158,8 +158,8 @@ add_filter( 'the_content', 'add_lazyload_class' );
  * 
  */
 
-if ( ! function_exists('isprivacypolicy') ) {
-	function isprivacypolicy() {
+if ( ! function_exists('_pa_is_privacy_policy') ) {
+	function _pa_is_privacy_policy() {
 		global $wp;
 		$active_page_url = home_url( add_query_arg( array(), $wp->request ) ) . '/';
 		if ( get_privacy_policy_url() == $active_page_url ) {
@@ -1236,7 +1236,7 @@ add_filter( 'comment_form_fields', 'move_fields_a_little' );
  * Change the allowed tags because... well, I want to.
  */
 
-function _pa_modifyTagsInComments() {
+function _pa_modify_tags_in_comments() {
 	global $allowedtags;
 	
 	$remove = array (
@@ -1262,4 +1262,4 @@ function _pa_modifyTagsInComments() {
 	);
     $allowedtags = array_merge( $allowedtags, $add );
 }
-add_action('init', '_pa_modifyTagsInComments', 11);
+add_action('init', '_pa_modify_tags_in_comments', 11);

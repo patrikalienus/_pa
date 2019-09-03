@@ -21,7 +21,7 @@ get_header();
 		<?php
 		while ( have_posts() ) {
 			the_post();
-			if ( isprivacypolicy() ) {
+			if ( _pa_is_privacy_policy() ) {
 				get_template_part( 'template-parts/content', 'privacy' );
 			} else {
 				get_template_part( 'template-parts/content', 'page' );

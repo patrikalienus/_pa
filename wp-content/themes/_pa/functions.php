@@ -7,7 +7,11 @@
  * @package _pa
  */
 
-define('BUILD', get_stylesheet_directory_uri() . '/_build');
+define('BUILD', get_stylesheet_directory_uri() . '/_build' );
+define('JS', 	BUILD . '/js' );
+define('CSS', 	BUILD . '/css' );
+define('IMG', 	BUILD . '/images' );
+define('FONTS', BUILD . '/webfonts' );
 
 require_once( get_template_directory() . '/_functions/global.php');
 require_once( get_template_directory() . '/_functions/widgets.php');
