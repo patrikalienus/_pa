@@ -3,10 +3,9 @@
  * 
  * This file is JUST for loading components from components.js.
  */
+/*
 $(document).ready(function() {
-	/**
-	 * Navigation Menu Slider
-	 */
+	// Navigation Menu Slider
 	$('#nav-expander').on('click', function(e) {
 		e.preventDefault();
 		$('body').toggleClass('nav-expanded');
@@ -33,3 +32,5 @@ $(document).ready(function() {
 		}
 	});
 });
+
+*/

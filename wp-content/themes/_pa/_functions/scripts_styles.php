@@ -11,9 +11,9 @@ function _pa_js() {
 		wp_deregister_script( 'jquery' );
 		wp_deregister_script( 'jquery-migrate' );
 
-		wp_register_script( 'jquery', JS . '/jquery-3.4.1.min.js', false, null, true ); // In footer
-		wp_register_script( 'jquery-migrate', JS . '/jquery-migrate-3.1.0.min.js', 	array('jquery'), null, true ); // In footer
-		wp_register_script( '_pa', JS . '/_pa-min.js', array('jquery'), null, true ); // In footer
+		wp_register_script( 'jquery', JS . '/jquery-min.js', false, null, true ); // In footer
+		//wp_register_script( 'jquery-migrate', JS . '/jquery-migrate-3.1.0.min.js', 	array('jquery'), null, true ); // In footer
+		//wp_register_script( '_pa', JS . '/_pa-min.js', array('jquery'), null, true ); // In footer
 		wp_register_script( 'components', JS . '/components-min.js', array('jquery'), null, true ); // In footer
 		wp_register_script( 'prettify', JS . '/prettify/run_prettify.js?skin=sons-of-obsidian', array(), false, true); // Footer
 

@@ -15,6 +15,11 @@ It's based off of [_s](https://underscores.me/) in order to save a day of work.
 - I do not like (nay - I HATE) the 'endif', 'endwhile' format. It breaks my visual way of thinking and so all instances of that have been removed. A PR that contains such things, will be denied.
 - PHP 7.1+ is required for sure. PHP 7.3 is (probably) required. I haven't bothered testing in lower versions because really, why would I? I keep my environments up-to-date.
 
+## Requirements
+
+- A decent IDE will suffice
+- CodeKit
+
 ### Customization
 
 Yea. There'll be a lot of that.
@@ -22,6 +27,8 @@ Yea. There'll be a lot of that.
 ## Usage
 
 If I have to explain how to install a WP theme, this isn't for you.
+
+When modifying this theme, make sure you re-generate critical css and add that to _assets/scss/_critical.scss. 
 
 ## Author
 
