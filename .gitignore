@@ -1,20 +1,13 @@
-# ignore all files starting with . or ~
+# So much ignore. So little time.
 .*
 ~*
-
 /*
 /wp-content/*
 /wp-content/themes/*
+
+# except certain things in wp-content...
 !/wp-content/
 !/wp-content/themes/
 !/wp-content/themes/_pa/
 !/readme.md
 !.gitignore
-!.babelrc.js
-!.browserslistrc
-!.editorconfig
-!.eslintrc.json
-!.eslintignore
-!.stylelintignore
-!.stylelintrc
-!.travis.yml
