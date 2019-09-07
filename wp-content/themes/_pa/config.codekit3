@@ -20840,6 +20840,14 @@
 		"sC": 3,
 		"tS": 0
 		},
+	"/_assets/screenshot.psd": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/_build/screenshot.psd",
+		"oF": 1
+		},
 	"/_assets/scss/_critical.scss": {
 		"aP": 0,
 		"bl": 0,
@@ -20960,13 +20968,35 @@
 		"oAP": "/_build/_plugins/_pa-tweaks.zip",
 		"oF": 0
 		},
-	"/_plugins/_pa-tweaks/index.php": {
+	"/_plugins/_pa-tweaks/_pa-tweaks.php": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 1,
-		"oAP": "/_build/_plugins/_pa-tweaks/index.php",
-		"oF": 0
+		"oAP": "/_build/_plugins/_pa-tweaks/_pa-tweaks.php",
+		"oF": 1
+		},
+	"/_plugins/_pa-tweaks/img/login_background.jpg": {
+		"ft": 16384,
+		"iS": 102512,
+		"jF": 0,
+		"oA": 1,
+		"oAP": "/_build/_plugins/_pa-tweaks/img/login_background.jpg",
+		"oF": 1,
+		"oIPL": 0,
+		"opt": 1,
+		"q": 100
+		},
+	"/_plugins/_pa-tweaks/img/logo_replacement.png": {
+		"ft": 32768,
+		"iS": 15372,
+		"oA": 1,
+		"oAP": "/_build/_plugins/_pa-tweaks/img/logo_replacement.png",
+		"oF": 1,
+		"oIPL": 0,
+		"opt": 1,
+		"oT": 1,
+		"q": 100
 		},
 	"/archive.php": {
 		"cB": 0,
@@ -21071,14 +21101,6 @@
 		"oT": 1,
 		"q": 100
 		},
-	"/screenshot.psd": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 1,
-		"oAP": "/_build/screenshot.psd",
-		"oF": 1
-		},
 	"/search.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -21136,6 +21158,14 @@
 		"oA": 1,
 		"oAP": "/_build/template-parts/content-page.php",
 		"oF": 1
+		},
+	"/template-parts/content-privacy.php": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 1,
+		"oAP": "/_build/template-parts/content-privacy.php",
+		"oF": 0
 		},
 	"/template-parts/content-search.php": {
 		"cB": 0,

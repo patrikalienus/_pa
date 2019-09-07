@@ -55,7 +55,8 @@ blockquote {
  * $basic structure
 -* ------------------------------------------------------- */
 div.site-content {
-	padding-top: 56px;
+	//padding-top: 56px; // This is only good when header.site-header is position: fixed.
+	padding-top: 20px;
 }
 
 
@@ -77,19 +78,48 @@ body.admin-bar {
 	}
 }
 header.site-header {
-	position: fixed;
+	/*position: fixed;
 	top: 0;
-	left: 0;
+	left: 0;*/
 	width: 100%;
 	padding: 10px;
 	background: #fff;
 	color: #000;
 	text-align: right;
+	border-bottom: 1px solid $light-grey;
 	@media(min-width: 460px) {
 		text-align: left;
 	}
 	z-index: 2;
-	
+
+	div.primary-menu {
+		ul.pa-nav {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+			display: flex;
+			flex-wrap: nowrap;
+			li {
+				text-align: center;
+				flex-grow: 1;
+				flex-basis: 0;
+				padding: 0;
+				margin: 0;
+				a {
+					color: $primary;
+
+				}
+			}
+		}
+	}
+
+
+
+
+
+
+
+	/*
 	a.nav-expander {
 		background-image: url('../images/menu-icon.svg');
 		background-repeat: no-repeat;
@@ -106,8 +136,14 @@ header.site-header {
 			cursor: pointer;
 		}
 	}
+	*/
 }
 
+/*
+	DRAWER NAV DISABLED.
+*/
+
+/*
 body.nav-expanded {
 	header.site-header {
 		@media(max-width: 459px) {
@@ -121,23 +157,8 @@ body.nav-expanded {
 		}
 	}
 }
-/*
-<nav class="drawer-nav" role="navigation">
-	<div id="main-menu" class="primary-menu">
-		<ul id="slideout-menu" class="navbar-nav mr-auto">
-			<li class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item active menu-item-6 nav-item">
-				<a title="Home" href="/" class="nav-link">Home</a>
-			</li>
-			<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-5 nav-item">
-				<a title="Test" href="#" class="nav-link">Test</a>
-			</li>
-		</ul>
-	</div>
-</nav>
-*/
-/* -------------------------------------------------------
- * $drawers
--* ------------------------------------------------------- */
+
+// drawers
 nav.drawer-nav {
 	background: $primary;
 	display: block;
@@ -250,6 +271,7 @@ nav.drawer-nav {
 		}
 	}
 }
+
 body {
 	-o-transition: all 0.4s ease-in-out 0s;
 	-moz-transition: all 0.4s ease-in-out 0s;
@@ -267,16 +289,13 @@ body.nav-expanded {
 	transition: all 0.4s ease-in-out 0s;
 }
 
-div.primary-menu {
-	
-}
-
 #nav-close {
 	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-weight: 300;
 	font-size: 24px;
 	padding-right: 10px;
 }
+*/
 
 
 article.type-post, footer.site-footer {

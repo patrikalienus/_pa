@@ -22,10 +22,29 @@
 
 <div id="page" class="site">
 	<header id="masthead" class="site-header">
-		<a id="nav-expander" class="nav-expander"></a>
+		<?php
+		// Disabled because I ended up not liking it.
+		/* <a id="nav-expander" class="nav-expander"></a> */ ?>
+		<nav class="" role="navigation">
+			<?php
+			wp_nav_menu( array(
+				'theme_location'	=> 'menu-1',
+				'depth'				=> 1, // no children
+				'container'			=> 'div',
+				'container_class'	=> 'primary-menu',
+				'container_id'		=> 'main-menu',
+				'menu_class'		=> 'pa-nav',
+				'fallback_cb'		=> 'WP_Bootstrap_Navwalker::fallback',
+				'menu_id'			=> 'single-line-menu',
+				'walker'			=> new WP_Bootstrap_Navwalker(),
+			) );
+			?>
+		</nav>
 	</header><!-- #masthead -->
 
-	<?php get_template_part( 'template-parts/drawer', 'nav' ); ?>
+	<?php
+	// Disabled drawer.
+	/* get_template_part( 'template-parts/drawer', 'nav' ); */ ?>
 	
 	<div id="content" class="site-content">
 		

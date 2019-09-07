@@ -6,6 +6,7 @@ add_action( 'tgmpa_register', '_pa_register_required_plugins' );
  */
 function _pa_register_required_plugins() {
 	$plugins = array(
+		/*
 		array(
 			'name'               => 'Regenerate Thumbnails', // The plugin name.
 			'slug'               => 'regenerate-thumbnails', // The plugin slug (typically the folder name).
@@ -13,13 +14,13 @@ function _pa_register_required_plugins() {
 			'version'            => '3.1.1', // Must be this or higher
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
-		),
+		),*/
 		array(
 			'name'               => '_pa Tweaks',
 			'slug'               => '_pa-tweaks',
 			'source'             => get_template_directory() . '/_plugins/_pa-tweaks.zip',
 			'required'           => false, // recommended
-			'version'            => '1.2', // Must be this or higher
+			'version'            => '1.3.2', // Must be this or higher
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
