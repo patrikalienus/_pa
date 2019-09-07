@@ -11,3 +11,5 @@
 !/wp-content/themes/_pa/
 !/readme.md
 !.gitignore
+
+node_modules
