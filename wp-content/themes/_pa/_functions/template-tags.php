@@ -245,14 +245,24 @@ if ( ! function_exists( '_pa_post_thumbnail' ) ) {
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
+	 * @param size				optional image size to use.
+	 * @param attachment_id		optional id of image to use.
 	 */
-	function _pa_post_thumbnail($size = '_pa-wide-narrow') {
-		if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+	function _pa_post_thumbnail( $size = '_pa-wide-narrow', $attachment_id = '' ) {
+		if ( post_password_required() || is_attachment() ) {
 			return;
 		}
-		$fimage_id		= get_post_thumbnail_id();
-		$image 			= wp_get_attachment_image_src( $fimage_id, $size, false )[0];
+		if ( ! has_post_thumbnail() && ! $attachment_id ) {
+			return;
+		}
 		
+		if ($attachment_id) {
+			$fimage_id = $attachment_id;
+		} else {
+			$fimage_id = get_post_thumbnail_id();
+		}
+		
+		$image 			= wp_get_attachment_image_src( $fimage_id, $size, false )[0];
 		$image_alt		= get_post_meta($fimage_id, '_wp_attachment_image_alt', TRUE); if ( ! $image_alt ) { $image_alt = get_the_title(); }
 		$image_title	= get_the_title($fimage_id); if ( ! $image_title ) { $image_title = get_the_title(); }
 
@@ -263,12 +273,14 @@ if ( ! function_exists( '_pa_post_thumbnail' ) ) {
 		} else { ?>
 			<div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 col-xl-8 offset-md-1 offset-lg-2 offset-xl-2">
 				<figure class="post-thumbnail">
-					<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1">
-					<?php
-						the_post_thumbnail( $size, array(
-							'alt' => the_title_attribute( array( 'echo' => false) ),						'class'  => 'img-fluid',
-						) );
-						?>
+					<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true" tabindex="-1"><?php
+						if ( has_post_thumbnail() ) {
+							the_post_thumbnail( $size, array(
+								'alt' => the_title_attribute( array( 'echo' => false) ),						'class'  => 'img-fluid',
+							) );
+						} else { ?>
+							<img src="<?php echo $image; ?>" class="img-fluid wp-post-image" alt="<?php echo $image_alt; ?> "> <?php
+						} ?>
 					</a>
 				</figure>
 			</div>
@@ -295,18 +307,15 @@ if ( ! function_exists('_pa_title_on_archive_pages') ) {
 }
 
 
-
-
 if ( ! function_exists('_pa_container_tag_post') ) {
 	/**
 	 * This injects container HTML if we're on a single post.
-	 * This is so that we don't have unnecessary nesting of .container>.row's when index.php is in effect.
+	 * This is so that we don't have unnecessary nesting of .container>.row's when index.php is being used.
 	 * 
 	 * @param $loc
 	 * 
 	 * It takes only one optional parameter: loc.
 	 * If it's 'end', it'll inject the $container_tag['end'], otherwise $container_tag['start'].
-	 * 
 	 */
 	function _pa_container_tag_post($loc = 'start') {
 		if ( is_singular() ) {

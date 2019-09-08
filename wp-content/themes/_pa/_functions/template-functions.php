@@ -322,3 +322,32 @@ function _pa_custom_gallery_format( $string, $attr ) {
 	return $output;
 }
 add_filter('post_gallery', '_pa_custom_gallery_format', 10, 2);
+
+
+
+
+/**
+ * This takes the full URL of an image, resized or not, and returns the post ID.
+ * Useful when you want to get a different image size, regardless of what the user 
+ * has chosen.
+ * 
+ * Props to: @cale_b on StackOverflow for this solution.
+ * https://stackoverflow.com/questions/25671108/get-attachment-id-by-file-path-in-wordpress/31743463
+ * 
+ */
+function find_post_id_from_path( $path ) {
+	// detect if is a media resize, and strip resize portion of file name
+	if ( preg_match( '/(-\d{1,4}x\d{1,4})\.(jpg|jpeg|png|gif)$/i', $path, $matches ) ) {
+		$path = str_ireplace( $matches[1], '', $path );
+	}
+
+	// process and include the year / month folders so WP function below finds properly
+	if ( preg_match( '/uploads\/(\d{1,4}\/)?(\d{1,2}\/)?(.+)$/i', $path, $matches ) ) {
+		unset( $matches[0] );
+		$path = implode( '', $matches );
+	}
+
+	// at this point, $path contains the year/month/file name (without resize info)
+	// call WP native function to find post ID properly
+	return attachment_url_to_postid( $path );
+}
