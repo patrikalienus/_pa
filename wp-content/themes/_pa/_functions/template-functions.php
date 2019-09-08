@@ -325,6 +325,12 @@ add_filter('post_gallery', '_pa_custom_gallery_format', 10, 2);
 
 
 
+function _pa_find_first_img_tag($string) {
+	preg_match('/<img.+src=[\'"](?P<src>.+?)[\'"].*>/i', $string, $first_image);
+	return $first_image['src'];
+}
+
+
 
 /**
  * This takes the full URL of an image, resized or not, and returns the post ID.
