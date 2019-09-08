@@ -70,7 +70,7 @@ if ( ! function_exists( '_pa_remove_dashboard_widgets' ) ) {
 		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
 		remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
 	}
-	add_action('wp_dashboard_setup', 'remove_dashboard_widgets' );
+	add_action('wp_dashboard_setup', '_pa_remove_dashboard_widgets' );
 }
 
 
