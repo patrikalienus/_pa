@@ -18,8 +18,8 @@ function _pa_js() {
 		wp_register_script( 'prettify', JS . '/prettify/run_prettify.js?skin=sons-of-obsidian', array(), false, true); // Footer
 
 		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'jquery-migrate' );
-		wp_enqueue_script( '_pa' );
+		//wp_enqueue_script( 'jquery-migrate' );
+		//wp_enqueue_script( '_pa' );
 		wp_enqueue_script( 'components' );
 		wp_enqueue_script( 'prettify' );
 		wp_localize_script( 'prettify', 'codePrettifyLoaderBaseUrl', JS . '/prettify');
