@@ -57,9 +57,7 @@ add_filter( 'style_loader_tag', '_pa_css_rel_preload', 10, 4 );
 
 /**
  * This takes the content of /_build/css/_critical.css and injects it into <head> within <style> tags.
- * 
  * MASSIVE props to Jonas for the generator: https://jonassebastianohlsson.com/criticalpathcssgenerator/
- * 
  */
 function _pa_critical_css() {
 	$critical_css = file_get_contents( CSS . '/_critical.css');
