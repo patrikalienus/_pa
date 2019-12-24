@@ -1,21 +1,22 @@
 <?php
 /*
 	Plugin Name: _pa Tweaks
-	Plugin URI: http://www.alienus.se
-	Description: Removes junk *I* don't need, adds useful stuff for the Admin view. It doesn't add any external files or other performance decreasing things.
-	Version: 1.3.2
+	Plugin URI: http://www.patrikalienus.se
+	Description: Removes junk that I don't need, adds useful stuff for the Admin view. It doesn't add any external files or other performance decreasing things.
+	Version: 1.3.4
 	Author: Patrik Alienus
-	Author URI: http://www.alienus.se
+	Author URI: http://www.patrikalienus.se
 	Copyright: CC0. I.e. do what you want. I claim no copyright.
 */
-
-/* 	--------------------------------------------
-	$DASHBOARD
-	-------------------------------------------- */
 
 define( 'PA_TWEAKS_ROOT', plugins_url( '', __FILE__ ) );
 define( 'PA_TWEAKS_IMAGES', PA_TWEAKS_ROOT . '/img' );
 define( 'PA_TWEAKS_IMAGES_OVERRIDE', '/_pa' );
+define( 'PA_TWEAKS_VERSION', '1.3.4' );
+
+/**
+ * DASHBOARD
+ */
 
 // Add CPTs to WP-ADMIN Right Now-Widget
 if ( ! function_exists( '_pa_right_now_content_table_end' ) ) {
@@ -52,27 +53,21 @@ if ( ! function_exists( '_pa_right_now_content_table_end' ) ) {
 
 
 /**
- * 
- * Self-explanatory I think.
- * 
- * I truly dislike a lot of the dashboard widgets. They clutter up my workspace and thus, I remove them.
- * You can disable or modify this as you please.
- * 
+ * Remove dashboard stuff that no one actually needs or uses.
  */
-if ( ! function_exists( '_pa_remove_dashboard_widgets' ) ) {
-	function _pa_remove_dashboard_widgets() {
-		global $wp_meta_boxes;
-		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_quick_press']);
-		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_incoming_links']);
-		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_plugins']);
-		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_drafts']);
-		unset($wp_meta_boxes['dashboard']['normal']['core']['dashboard_recent_comments']);
-		unset($wp_meta_boxes['dashboard']['side']['core']['dashboard_primary']);
-		remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
-	}
-	add_action('wp_dashboard_setup', '_pa_remove_dashboard_widgets' );
+function remove_dashboard_meta() {
+	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
+	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
+	remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' );
 }
-
+add_action( 'admin_init', 'remove_dashboard_meta' );
+remove_action( 'welcome_panel', 'wp_welcome_panel' );
 
 
 /* 	--------------------------------------------
