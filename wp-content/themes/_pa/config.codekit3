@@ -7,7 +7,7 @@
 		"uuidString": "53CB80EE-3693-42D9-BCE8-5F9C5E24F7BE"
 		}
 	],
-"creatorBuild": "32001",
+"creatorBuild": "32147",
 "files": {
 	"/404.php": {
 		"cB": 0,
@@ -21,14 +21,14 @@
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/animate.css.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/css/all.css": {
 		"aP": 1,
@@ -650,235 +650,235 @@
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_animated.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_bordered-pulled.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_bordered-pulled.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_core.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_core.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_fixed-width.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_fixed-width.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_icons.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_icons.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_larger.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_larger.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_list.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_list.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_mixins.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_mixins.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_rotated-flipped.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_rotated-flipped.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_screen-reader.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_screen-reader.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_shims.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_shims.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_stacked.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_stacked.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/_variables.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/_variables.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/brands.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/brands.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/fontawesome.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/fontawesome.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/regular.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/regular.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/solid.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/solid.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/scss/v4-shims.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 1,
 		"oAP": "/_build/_components/fontawesome-free-5.9.0-web/scss/v4-shims.css",
 		"oF": 1,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/_components/fontawesome-free-5.9.0-web/sprites/brands.svg": {
 		"ft": 2097152,
@@ -16521,27 +16521,27 @@
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 0,
 		"oA": 0,
 		"oAP": "/_build/css/_critical.css",
 		"oF": 2,
 		"oS": 0,
-		"uL": 1
+		"sct": 1
 		},
 	"/_assets/scss/_pa.scss": {
 		"aP": 0,
 		"bl": 0,
 		"dP": 10,
-		"dS": 0,
+		"ec": 1,
 		"ft": 4,
 		"ma": 1,
 		"oA": 0,
 		"oAP": "/_build/css/_pa.css",
 		"oF": 3,
 		"oS": 3,
-		"uL": 1
+		"sct": 1
 		},
 	"/_build": {
 		"ft": 65536,
@@ -18970,13 +18970,13 @@
 		"autoOutputPathReplace1": "sass",
 		"autoOutputPathReplace2": "css",
 		"autoOutputPathStyle": 0,
+		"compilerType": 1,
 		"createSourceMap": 0,
-		"debugStyle": 0,
 		"decimalPrecision": 10,
+		"emitCharset": 1,
 		"outputStyle": 0,
 		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 1
+		"shouldRunBless": 0
 		},
 	"languageDefaultsSLIM": {
 		"autoOutputAction": 0,
