@@ -20,13 +20,13 @@ function _pa_register_required_plugins() {
 			'slug'               => '_pa-tweaks',
 			'source'             => get_template_directory() . '/_plugins/_pa-tweaks.zip',
 			'required'           => false, // recommended
-			'version'            => '1.3.2', // Must be this or higher
+			'version'            => '1.3.4', // Must be this or higher
 			'force_activation'   => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch.
 			'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins.
 			'external_url'       => '', // If set, overrides default API URL and points to an external URL.
 			'is_callable'        => '', // If set, this callable will be be checked for availability to determine if a plugin is active.
 		),
-		// Yoast SEO or Yoast SEO Premium
+		// Yoast SEO --or-- Yoast SEO Premium
 		array(
 			'name'				=> 'WordPress SEO by Yoast',
 			'slug'				=> 'wordpress-seo',
