@@ -2,6 +2,8 @@
 
 This is being actively developed. Plenty of things are not done yet. Do not use this theme in production. It's a B A D idea. 
 
+Correction: I'm not actively developing this as there's just no time at the moment. Feel free to submit pull requests and I'll review when I have time left over.
+
 ## Description
 
 Speed- & Content-centric theme. It's not made for anyone but me. Use, abuse, remix and change all you want, but you'll be on your own. This is not a theme you'll install, set and forget. In order to get it to work the way you want to, you need to tinker. And you need CodeKit. Why? Because I can't be bothered with using Gulp.
