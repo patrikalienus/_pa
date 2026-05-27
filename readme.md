@@ -1,8 +1,8 @@
 # _pa WordPress theme
 
-This is being actively developed. Plenty of things are not done yet. Do not use this theme in production. It's a B A D idea. 
+THIS IS NO LONGER BEING DEVELOPED, AND THIS IS NOT A GOOD STARTING POINT FOR A WORDPRESS THEME ANYMORE.
 
-Correction: I'm not actively developing this as there's just no time at the moment. Feel free to submit pull requests and I'll review when I have time left over.
+Also, don't use Wordpress. There are heaps of better alternatives.
 
 ## Description
 
